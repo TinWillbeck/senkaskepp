@@ -19,7 +19,7 @@ while (Raylib.WindowShouldClose() == false){
     }
     else if (currentScene == "start"){
         if (Raylib.IsKeyDown(KeyboardKey.KEY_ENTER)){
-            currentScene = "game";
+            currentScene = "preGame";
         }
 
     }
@@ -28,11 +28,17 @@ while (Raylib.WindowShouldClose() == false){
 
     Raylib.ClearBackground(Color.BLUE);
     Raylib.BeginDrawing();
+
     if (currentScene == "game"){
         Raylib.DrawTexture(board, 400, 500, Color.WHITE);
         Raylib.DrawTexture(enemyBoard, 400, 50, Color.WHITE);
     }
 
+    else if (currentScene == "preGame"){
+        Raylib.DrawTexture(board, 400, 500, Color.WHITE);
+        Raylib.DrawTexture(enemyBoard, 400, 50, Color.WHITE);
+        
+    }
     else if (currentScene == "start"){
         Raylib.DrawText("Press  ENTER to start", 215, 300, 32, Color.BLACK);
         Raylib.DrawText("Press  ESC to quit", 20, 860, 20, Color.BLACK);
