@@ -5,11 +5,11 @@ Raylib.SetTargetFPS(60);
 
 float speed = 2;
 
-Rectangle boat1 = new Rectangle(100, 600, 50, 20);
-Rectangle boat2 = new Rectangle(100, 650, 85, 20);
-Rectangle boat3 = new Rectangle(100, 700, 85, 20);
-Rectangle boat4 = new Rectangle(100, 750, 125, 20);
-Rectangle boat5 = new Rectangle(100, 800, 150, 20);
+Vector2 boat1 = new Vector2(100, 600);
+Vector2 boat2 = new Vector2(100, 650);
+Vector2 boat3 = new Vector2(100, 700);
+Vector2 boat4 = new Vector2(100, 750);
+Vector2 boat5 = new Vector2(100, 800);
 
 float tileSize = 32;
 int gridSize = 10;
@@ -60,11 +60,7 @@ while (Raylib.WindowShouldClose() == false)
     else if (currentScene == "preGame")
     {
 
-        Raylib.DrawRectangleRec(boat1, Color.GRAY);
-        Raylib.DrawRectangleRec(boat2, Color.GRAY);
-        Raylib.DrawRectangleRec(boat3, Color.GRAY);
-        Raylib.DrawRectangleRec(boat4, Color.GRAY);
-        Raylib.DrawRectangleRec(boat5, Color.GRAY);
+
 
         DrawGrid(tileSize, gridSize, firstGridOffset);
         DrawGrid(tileSize, gridSize, secondGridOffset);
@@ -82,12 +78,12 @@ while (Raylib.WindowShouldClose() == false)
     Raylib.EndDrawing();
 }
 
-static void PlaceBoat(Rectangle boat, float tileSize, int gridSize, Vector2 offset)
+static void PlaceBoat(Vector2 boat, float tileSize, int gridSize, Vector2 offset)
 {
-    if (Raylib.IsKeyPressed(KeyboardKey.KEY_ONE)){
+    for (var i = 0; i < ; i++)
+    {
         
     }
-
 }
 
 
