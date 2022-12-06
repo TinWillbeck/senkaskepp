@@ -10,7 +10,6 @@ Rectangle boat2 = new Rectangle(100, 650, 85, 20);
 Rectangle boat3 = new Rectangle(100, 700, 85, 20);
 Rectangle boat4 = new Rectangle(100, 750, 125, 20);
 Rectangle boat5 = new Rectangle(100, 800, 150, 20);
-Rectangle currBoat = new Rectangle(0, 0, 0, 0);
 
 float tileSize = 32;
 int gridSize = 10;
@@ -33,37 +32,7 @@ while (Raylib.WindowShouldClose() == false)
 
     else if (currentScene == "preGame")
     {
-        // if (Raylib.IsKeyDown(KeyboardKey.KEY_ONE)){
-        //     boat1 = currBoat;
-        // }
-        // if (Raylib.IsKeyDown(KeyboardKey.KEY_TWO)){
-        //     boat2 = currBoat;
-        // }
-        // if (Raylib.IsKeyDown(KeyboardKey.KEY_THREE)){
-        //     boat3 = currBoat;
-        // }
-        // if (Raylib.IsKeyDown(KeyboardKey.KEY_FOUR)){
-        //     boat4 = currBoat;
-        // }
-        // if (Raylib.IsKeyDown(KeyboardKey.KEY_FIVE)){
-        //     boat5 = currBoat;
-        // }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
-        {
-            boat4.y -= speed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
-        {
-            boat4.x -= speed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
-        {
-            boat4.y += speed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
-        {
-            boat4.x += speed;
-        }
+        
     }
 
 
@@ -83,22 +52,23 @@ while (Raylib.WindowShouldClose() == false)
 
     if (currentScene == "game")
     {
-
+        DrawGrid(tileSize, gridSize, firstGridOffset);
+        DrawGrid(tileSize, gridSize, secondGridOffset);
 
     }
 
     else if (currentScene == "preGame")
     {
-        // Raylib.DrawTexture(board, 400, 500, Color.WHITE);
-        // Raylib.DrawTexture(enemyBoard, 400, 50, Color.WHITE);
-        // Raylib.DrawRectangleRec(boat1, Color.GRAY);
-        // Raylib.DrawRectangleRec(boat2, Color.GRAY);
-        // Raylib.DrawRectangleRec(boat3, Color.GRAY);
-        // Raylib.DrawRectangleRec(boat4, Color.GRAY);
-        // Raylib.DrawRectangleRec(boat5, Color.GRAY);
+
+        Raylib.DrawRectangleRec(boat1, Color.GRAY);
+        Raylib.DrawRectangleRec(boat2, Color.GRAY);
+        Raylib.DrawRectangleRec(boat3, Color.GRAY);
+        Raylib.DrawRectangleRec(boat4, Color.GRAY);
+        Raylib.DrawRectangleRec(boat5, Color.GRAY);
 
         DrawGrid(tileSize, gridSize, firstGridOffset);
         DrawGrid(tileSize, gridSize, secondGridOffset);
+        PlaceBoat(boat1, tileSize, gridSize, secondGridOffset);
 
     }
     else if (currentScene == "start")
@@ -112,6 +82,13 @@ while (Raylib.WindowShouldClose() == false)
     Raylib.EndDrawing();
 }
 
+static void PlaceBoat(Rectangle boat, float tileSize, int gridSize, Vector2 offset)
+{
+    if (Raylib.IsKeyPressed(KeyboardKey.KEY_ONE)){
+        
+    }
+
+}
 
 
 static void DrawGrid(float tileSize, int gridSize, Vector2 offset)
@@ -131,7 +108,7 @@ static void DrawGrid(float tileSize, int gridSize, Vector2 offset)
     for (var num = 0; num < gridSize; num++)
     
     {
-        Raylib.DrawText("1", offset + tileSize, 0, 14, Color.YELLOW);
+        
     }
 
 }
