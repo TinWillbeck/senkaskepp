@@ -5,29 +5,32 @@ Raylib.SetTargetFPS(60);
 
 float speed = 2;
 
-Vector2 boat1 = new Vector2(100, 600);
-Vector2 boat2 = new Vector2(100, 650);
-Vector2 boat3 = new Vector2(100, 700);
-Vector2 boat4 = new Vector2(100, 750);
-Vector2 boat5 = new Vector2(100, 800);
+int boat1 = 2;
+int boat2 = 3;
+int boat3 = 3;
+int boat4 = 4;
+int boat5 = 5;
 
 float tileSize = 32;
 int gridSize = 10;
 Vector2 firstGridOffset = new Vector2(500, 100);
 Vector2 secondGridOffset = new Vector2(500, 500);
  
-string currentScene = "preGame";
+string currentScene = "start";
 
 while (Raylib.WindowShouldClose() == false)
 {
-
-
 
     //logik
 
     if (currentScene == "game")
     {
-
+        // kolla vems tur det är, 
+        // be spelaren om en plats på kartan där en bomb ska skickas, 
+        // skicka bomb, 
+        // checka om det är en båt i rutan, 
+        // markera rutan
+        // byt tur
     }
 
     else if (currentScene == "preGame")
@@ -64,7 +67,7 @@ while (Raylib.WindowShouldClose() == false)
 
         DrawGrid(tileSize, gridSize, firstGridOffset);
         DrawGrid(tileSize, gridSize, secondGridOffset);
-        PlaceBoat(boat1, tileSize, gridSize, secondGridOffset);
+        PlaceBoat(100, boat1, tileSize, gridSize, secondGridOffset);
 
     }
     else if (currentScene == "start")
@@ -78,9 +81,10 @@ while (Raylib.WindowShouldClose() == false)
     Raylib.EndDrawing();
 }
 
-static void PlaceBoat(Vector2 boat, float tileSize, int gridSize, Vector2 offset)
+static void PlaceBoat(int placement, int boat, float tileSize, int gridSize, Vector2 offset)
 {
-    for (var i = 0; i < ; i++)
+    
+    for (var i = 0; i < boat; i++)
     {
         
     }
